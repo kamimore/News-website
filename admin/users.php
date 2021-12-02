@@ -8,7 +8,7 @@ if(isset($_GET['page']) and $_GET['page']!=0)
   $page=safe($_GET['page']);
 
 }else{
-  
+
   $page=1;
 }
 
