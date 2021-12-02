@@ -1,0 +1,21 @@
+RewriteEngine on
+
+RewriteRule ^category/([0-9]+)$ category.php?cid=$1 [NC]
+RewriteRule ^category/([0-9]+)/([0-9]+)$ category.php?cid=$1&page=$2 [NC]
+
+RewriteRule ^author/([0-9]+)$ author.php?aid=$1 [NC]
+RewriteRule ^author/([0-9]+)/([0-9]+)$ author.php?aid=$1&page=$2 [NC]
+
+RewriteRule ^single/([0-9]+)$ single.php?id=$1 [NC]
+#RewriteRule ^single/([0-9]+)/([0-9]+)$ single.php?id=$1&page=$2 [NC]
+
+RewriteRule ^search/([0-9a-zA-Z]+)$ search.php?search=$1 [NC]
+RewriteRule ^search/([0-9a-zA-Z]+)/([0-9]+)$ search.php?search=$1&page=$2 [NC]
+
+RewriteRule ^vayuananda index.php [NC,L]
+
+RewriteRule ^index/([0-9]+)$ index.php?page=$1 [NC]
+
+RewriteCond %{Request_filename} !-d
+RewriteCond %{Request_filename}\.php -f
+RewriteRule ^((.)+)$ $1.php [NC,L]
