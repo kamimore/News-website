@@ -31,6 +31,8 @@ else
 
   }
   if(empty($errors)==true){
+    $file_old_name=safe($_POST['old-image']);
+    unlink("upload/".$file_old_name);
     $file_name=strtotime("now")."-".$file_name;
     move_uploaded_file($file_tmp,"upload/".$file_name);
 
